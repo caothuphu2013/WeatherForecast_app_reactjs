@@ -1,0 +1,89 @@
+.content {
+    background-image: url('./images/background.jpg');
+    background-size: cover;
+    background-position: center center;
+    height: 660px;
+    opacity: 0.9%;
+    position: relative;
+}
+
+input[type="text"] {
+    background-color: transparent;
+    border: 0;
+    border-bottom: solid 1px #f16051;
+    width: 30%;
+    padding-bottom: 4px;
+    color: #2a2a2a !important;
+    font-weight: lighter;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+    margin-right: 20px;
+    font-size: 16px;
+    width: 100%
+  }
+
+  
+input[type="text"] { 
+    outline: none;
+}
+
+input:-webkit-autofill {
+    -webkit-text-fill-color: #2a2a2a !important;
+    -webkit-text-fill-background: transparent !important;
+}
+
+button {
+    border: 0;
+    padding: 8px 20px;
+    margin: 0 2px;
+    border-radius: 5px;
+    font-weight: lighter;
+    letter-spacing: 1px;
+    font-size: 15px;
+    cursor: pointer;
+    background-color: #f16051;
+    color: #2a2a2a;
+    font-weight: 100;
+}
+
+button:hover {
+    background-color: #e24230;
+}
+  
+button:active {
+    outline: none;
+}
+
+form {
+    margin-top: 5%;
+}
+
+.form-button {
+    text-align: center;
+}
+
+.wrapper {
+    width: 30%;
+    position: absolute;
+    top: 5%;
+    right: 15%;
+}
+
+.weather_info {
+    margin-top: 7%;
+    width: 60%;
+    font-size: 20px;
+    font-weight: 200;
+    letter-spacing: 2px;
+    border: 2px #f16051 solid;
+    width: 100%;
+    padding: 8px 20px;
+}
+
+.weather_error {
+    margin-top: 7%;
+    color: #f16051;
+    font-size: 18px;
+    letter-spacing: 1px;
+    font-weight: bold;
+}

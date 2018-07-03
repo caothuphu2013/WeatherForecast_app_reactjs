@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Title from './components/Title'; 
 import Form from './components/Form';
 import Weather from './components/Weather';
 
@@ -21,25 +20,40 @@ class App extends Component {
     const api_call = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city},${country}
               &appid=${API_KEY}&units=metric`);
     const data = await api_call.json();
-    console.log(data);
-    this.setState({
-      temperature: data.main.temp,
-      city: data.name,
-      country: data.sys.country,
-      humidity: data.main.humidity,
-      description: data.weather[0].description,
-      error: ""
-    })
+    if (city && country && data.main) {
+      this.setState({
+        temperature: data.main.temp,
+        city: data.name,
+        country: data.sys.country,
+        humidity: data.main.humidity,
+        description: data.weather[0].description,
+        error: ""
+      })
+    }
+    else {
+      this.setState({
+        temperature: undefined,
+        city: undefined,
+        country: undefined,
+        humidity: undefined,
+        description: undefined,
+        error: "Không tìm được địa điểm."
+      })
+    }
+
+
   }
   render() {
     return (
-      <div>
-        <Title/>
-        <Form getWeather={this.getWeather}/>
-        <Weather weather={this.state}/>
+      <div className='content'>
+        <div className='container'>
+          <div className='wrapper'>
+            <Form getWeather={this.getWeather} />
+            <Weather weather={this.state} />
+          </div>
+        </div>
       </div>
     );
   }
 }
-
 export default App;
