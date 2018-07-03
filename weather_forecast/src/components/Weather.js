@@ -2,7 +2,7 @@ import React from 'react';
 
 const weather = (props) => (
     <div>
-        <div className='weather_info'>
+        <div className='weather_info' style={props.style}>
             {props.weather.temperature && <p>Nhiệt độ: {props.weather.temperature}</p>}
             {props.weather.humidity && <p>Độ ẩm: {props.weather.humidity} %</p>}
             {props.weather.description && <p>Điều kiện: {props.weather.description}</p>}

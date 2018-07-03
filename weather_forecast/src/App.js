@@ -11,7 +11,10 @@ class App extends Component {
     country: undefined,
     humidity: undefined,
     description: undefined,
-    error: undefined
+    error: undefined,
+    style: {
+      border: 'none'
+    }
   }
   getWeather = async (e) => {
     e.preventDefault();
@@ -27,6 +30,7 @@ class App extends Component {
         country: data.sys.country,
         humidity: data.main.humidity,
         description: data.weather[0].description,
+        style: {border: '2px #f16051 solid'},
         error: ""
       })
     }
@@ -37,6 +41,9 @@ class App extends Component {
         country: undefined,
         humidity: undefined,
         description: undefined,
+        style: {
+          border: 'none'
+        },
         error: "Không tìm được địa điểm."
       })
     }
@@ -49,7 +56,7 @@ class App extends Component {
         <div className='container'>
           <div className='wrapper'>
             <Form getWeather={this.getWeather} />
-            <Weather weather={this.state} />
+            <Weather weather={this.state} style={this.state.style}/>
           </div>
         </div>
       </div>
